@@ -18,6 +18,64 @@
         text-decoration: none;
         color: pink;
       }
+
+       /* Three columns side by side */
+      .column {
+        float: left;
+        width: 25%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+
+      /* Display the columns below each other instead of side by side on small screens */
+      @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+      }
+
+      /* Add some shadows to create a card effect */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      /* Some left and right padding inside the container */
+      .container {
+        padding: 0 16px;
+      }
+
+      /* Clear floats */
+      .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .title {
+        color: grey;
+      }
+
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .button:hover {
+        background-color: #555;
+      }       
+
+      #cards {
+        margin: 0px 50px 0px 50px;
+      }
+
     </style>
 
   <body>
@@ -57,25 +115,227 @@
       <h1 class="display-3">Bios</h1>
     </div>    
 
+    <section id="cards">
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/img (2).jpg" alt="Name 1" style="width:100%;">
+        <div class="container">
+          <h2>Name 1</h2>
+          <p class="title">CEO &amp; Founder</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button">Contact</button></p>
+      </div>
+      </div>
+    </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="images/img (11).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 2</h2>
+            <p class="title">Art Director</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (12).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 3</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (22).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 4</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/img (30).jpg" alt="Name 1" style="width:100%;">
+        <div class="container">
+          <h2>Name 5</h2>
+          <p class="title">CEO &amp; Founder</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button">Contact</button></p>
+      </div>
+      </div>
+    </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="images/img (39).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 6</h2>
+            <p class="title">Art Director</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (58).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 7</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (68).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 8</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/img (79).jpg" alt="Name 1" style="width:100%;">
+        <div class="container">
+          <h2>Name 9</h2>
+          <p class="title">CEO &amp; Founder</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button">Contact</button></p>
+      </div>
+      </div>
+    </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="images/img (94).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 10</h2>
+            <p class="title">Art Director</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (104).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 11</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (115).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 12</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="images/img (127).jpg" alt="Name 1" style="width:100%;">
+        <div class="container">
+          <h2>Name 13</h2>
+          <p class="title">CEO &amp; Founder</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p>example@example.com</p>
+          <p><button class="button">Contact</button></p>
+      </div>
+      </div>
+    </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="images/img (132).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 14</h2>
+            <p class="title">Art Director</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (156).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 15</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+          <img src="images/img (181).jpg" alt="Name 2" style="width:100%;">
+          <div class="container">
+            <h2>Name 16</h2>
+            <p class="title">Designer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            <p>example@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  </section>
+
     <section style="overflow: hidden;">
     </section>
-
-    <div class="card mb-3">
-    <h3 class="card-header">Card header</h3>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-    </div>
-    <img style="width: 20%; display: block;" src="images/IMG_5070.jpg" alt="Card image">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    </div>
 
     <section id="links">
     <a href="https://www.facebook.com/herecomestreblewmu/" class="fa fa-facebook" target="_blank"></a>

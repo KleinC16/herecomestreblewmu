@@ -3,7 +3,7 @@
   <head>
     <title>Here Comes Treble</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
    <style>
       .fa {
@@ -27,17 +27,27 @@
         padding: 0 8px;
       }
 
+      .eboard {
+        width: 20% !important;
+      }
+
       /* Display the columns below each other instead of side by side on small screens */
       @media screen and (max-width: 650px) {
-      .column {
-        width: 100%;
-        display: block;
-      }
+        .column {
+          width: 100%;
+          display: block;
+        }
       }
 
       /* Add some shadows to create a card effect */
       .new_card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: all .2s ease-in-out;
+        background-color: white;
+      }
+
+      .new_card:hover {
+        transform: scale(1.1);
       }
 
       /* Some left and right padding inside the container */
@@ -54,6 +64,7 @@
 
       .title {
         color: grey;
+        margin: 0;
       }
 
       .button {
@@ -70,7 +81,7 @@
 
       .button:hover {
         background-color: #f5cdab;
-      }       
+      }
 
       #cards {
         margin: 0px 50px 0px 50px;
@@ -113,236 +124,246 @@
     </nav>
     <div class="jumbotron">
       <h1 class="display-3">Bios</h1>
-    </div>    
+    </div>
 
     <section id="cards">
-    <div class="row">
-    <div class="column">
-      <div class="new_card">
-        <img src="images/img (2).jpg" alt="Name 1" style="width:100%;">
-        <div class="container">
-          <h2>Name 1</h2>
-          <p class="title">CEO &amp; Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>example@example.com</p>
-          <p><button class="button">Contact</button></p>
+      <h2>Executive board</h2>
+      <div class="row d-flex align-items-stretch">
+        <div class="column eboard d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (94).jpg" alt="Name 1" style="width:100%;">
+            <div class="container">
+              <h2>Christopher Frego</h2>
+              <p class="title">President, Alto</p>
+              <p class="title">Computer Science</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column eboard d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (58).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Maddie Pierce</h2>
+              <p class="title">President, Alto</p>
+              <p class="title">Computer Science</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column eboard d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (11).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Briana Klug</h2>
+              <p class="title">Secretary, Soprano</p>
+              <p class="title">Elementary Education</p>
+              <p>Hot girl who is my girlfriend and is very sweet. She is very passionate about school and mastering subjects to teach the world!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column eboard d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (79).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Anna Sitar</h2>
+              <p class="title">President, Alto</p>
+              <p class="title">Computer Science</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column eboard d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (68).jpg" alt="Name 1" style="width:100%;">
+            <div class="container">
+              <h2>Emma Dunlop</h2>
+              <p class="title">President, Alto</p>
+              <p class="title">Computer Science</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <h2>Members</h2>
+
+      <div class="row">
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (132).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Niang Siam</h2>
+              <p class="title">Art Director</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (227).jpg" alt="Name 1" style="width:100%;">
+            <div class="container">
+              <h2>Ryan Loney</h2>
+              <p class="title">CEO &amp; Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (13).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Kylee Wheeler</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (28).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Chelsea Chavez</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
-      <div class="column">
-        <div class="new_card">
-          <img src="images/img (11).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 2</h2>
-            <p class="title">Art Director</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
+      <div class="row">
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (22).jpg" alt="Name 1" style="width:100%;">
+            <div class="container">
+              <h2>Ophelia Williams</h2>
+              <p class="title">CEO &amp; Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
           </div>
         </div>
-    </div>
 
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (12).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 3</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (1).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Elizabeth Taylor</h2>
+              <p class="title">Art Director</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
           </div>
         </div>
-    </div>
 
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (22).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 4</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (104).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Jillian Brown</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
           </div>
         </div>
-    </div>
-  </div>
 
-    <div class="row">
-    <div class="column">
-      <div class="new_card">
-        <img src="images/img (30).jpg" alt="Name 1" style="width:100%;">
-        <div class="container">
-          <h2>Name 5</h2>
-          <p class="title">CEO &amp; Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>example@example.com</p>
-          <p><button class="button">Contact</button></p>
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (115).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Cat Vaught</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="row">
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (123).jpg" alt="Name 1" style="width:100%;">
+            <div class="container">
+              <h2>Kitty Clark</h2>
+              <p class="title">CEO &amp; Founder</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (46).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Kailyn Riebe</h2>
+              <p class="title">Art Director</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (154).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Meggie Anderson</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column d-flex align-items-stretch">
+          <div class="new_card">
+            <img src="images/img (164).jpg" alt="Name 2" style="width:100%;">
+            <div class="container">
+              <h2>Haley Schnoor</h2>
+              <p class="title">Designer</p>
+              <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+              <p>example@example.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-      <div class="column">
-        <div class="new_card">
-          <img src="images/img (39).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 6</h2>
-            <p class="title">Art Director</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (58).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 7</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (68).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 8</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-  </div>
-
-    <div class="row">
-    <div class="column">
-      <div class="new_card">
-        <img src="images/img (79).jpg" alt="Name 1" style="width:100%;">
-        <div class="container">
-          <h2>Name 9</h2>
-          <p class="title">CEO &amp; Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>example@example.com</p>
-          <p><button class="button">Contact</button></p>
-      </div>
-      </div>
-    </div>
-
-      <div class="column">
-        <div class="new_card">
-          <img src="images/img (94).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 10</h2>
-            <p class="title">Art Director</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (104).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 11</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (115).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 12</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-  </div>
-
-    <div class="row">
-    <div class="column">
-      <div class="new_card">
-        <img src="images/img (127).jpg" alt="Name 1" style="width:100%;">
-        <div class="container">
-          <h2>Name 13</h2>
-          <p class="title">CEO &amp; Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>example@example.com</p>
-          <p><button class="button">Contact</button></p>
-      </div>
-      </div>
-    </div>
-
-      <div class="column">
-        <div class="new_card">
-          <img src="images/img (132).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 14</h2>
-            <p class="title">Art Director</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (156).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 15</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="new_card">
-          <img src="images/img (181).jpg" alt="Name 2" style="width:100%;">
-          <div class="container">
-            <h2>Name 16</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p>example@example.com</p>
-            <p><button class="button">Contact</button></p>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  </section>
+    </section>
 
     <section style="overflow: hidden;">
     </section>
 
     <section id="links">
-    <a href="https://www.facebook.com/herecomestreblewmu/" class="fa fa-facebook" target="_blank"></a>
+      <a href="https://www.facebook.com/herecomestreblewmu/" class="fa fa-facebook" target="_blank"></a>
       <a href="https://twitter.com/treblewmu/" class="fa fa-twitter" target="_blank"></a>
       <a href="https://www.instagram.com/herecomestreblewmu/" class="fa fa-instagram" target="_blank"></a>
       <a href="https://www.youtube.com/channel/UCHcgfp8DzRe_5oj10eps0cg/about" class="fa fa-youtube" target="_blank"></a>
-    </section>    
+    </section>
 
     <footer>
     </footer>

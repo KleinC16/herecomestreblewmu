@@ -6,8 +6,16 @@
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+
+      html, body, {
+        position:fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+      }
       body {
         background: url('images/img (194).jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -34,10 +42,10 @@
       }
 
       .nav-link {
-        font-family: 'Poiret One';
-        font-size: 3em;
+        font-size: 2em;
         color: #f4f4f4;
         text-shadow: 1px 1px #000000;
+        font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       }
 
       .nav-link:hover {
@@ -55,7 +63,7 @@
       .fa:hover {
         text-decoration: none;
         color: pink;
-      }      
+      }
 
     </style>
   </head>
@@ -90,14 +98,23 @@
     <section style="overflow: hidden;">
     </section>
 
-    <section id="links">
-      <a href="https://www.facebook.com/herecomestreblewmu/" class="fa fa-facebook" target="_blank"></a>
-      <a href="https://twitter.com/treblewmu/" class="fa fa-twitter" target="_blank"></a>
-      <a href="https://www.instagram.com/herecomestreblewmu/" class="fa fa-instagram" target="_blank"></a>
-      <a href="https://www.youtube.com/channel/UCHcgfp8DzRe_5oj10eps0cg/about" class="fa fa-youtube" target="_blank"></a>
-    </section>
-    
     <footer>
+      <section id="links">
+        <a href="https://www.facebook.com/herecomestreblewmu/" class="fa fa-facebook" target="_blank"></a>
+        <a href="https://twitter.com/treblewmu/" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/herecomestreblewmu/" class="fa fa-instagram" target="_blank"></a>
+        <a href="https://www.youtube.com/channel/UCHcgfp8DzRe_5oj10eps0cg/about" class="fa fa-youtube" target="_blank"></a>
+      </section>
+      <div style="-webkit-transform:scale(0.2);
+  -moz-transform:scale(0.2);
+  -ms-transform:scale(0.2);
+  transform:scale(0.2);" data-video="xB_svWoLZxk"
+        data-autoplay="1"
+        data-loop="1"
+        id="youtube-audio">
+      </div>
+      <script src="https://www.youtube.com/iframe_api"></script>
+      <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
     </footer>
   </body>
 </html>

@@ -10,10 +10,11 @@ https://www.youtube.com/channel/UCHcgfp8DzRe_5oj10eps0cg
 https://twitter.com/treblewmu
 
 Notes:
-  Music automatically starts playing, YouTube on main page
-  Gallery of pictures
-  Bio of group
-  In nav bar: Gallery, Bio, About/Contact, Events
-  Blog or posts (in the future)
-  JavaScript to expand picture in gallery, popups, animations, visual effects
-  Email Contact
+*  Music automatically starts playing, YouTube on main page
+*  Gallery of pictures
+*  Bio of group
+*  In nav bar: Gallery, Bio, About/Contact, Events
+*  Blog or posts (in the future)
+*  JavaScript to expand picture in gallery, popups, animations, visual effects
+*  Email Contact
+*  Use Javascript to click on an event and see a button for purchase tickets.

@@ -7,7 +7,6 @@ function loadImages() {
         document.write("<div class=\"row\">");
       }
       document.write(("<div class=\"col-md\"><img src=\"images/") + images[i] + ("\"style=\"width:99%; margin-bottom: 1em;\" onclick=\"openModal();currentSlide(") + (i+1) + (")\" class=\"hover-shadow\"></div>"));
-      //console.log(images[i]);
   }
 }
 
@@ -24,10 +23,4 @@ function loadModal() {
 
     document.write("<a class=\"prev\" onclick=\"plusSlides(-1)\">&#10094;</a>");
     document.write("<a class=\"next\" onclick=\"plusSlides(1)\">&#10095;</a>");
-
-    // for (i = 0; i < total; i++) {
-    //     document.write("<div class=\"column\">");
-    //     document.write(("<img class=\"demo cursor\" src=\"images/") + images[i] + ("\" style=\"width: 100%;\" onclick=\"currentSlide(") + i + (")\""));
-    //     document.write("</div>");
-    // }
 }

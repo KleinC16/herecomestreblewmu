@@ -22,8 +22,6 @@ function toggleForm() {
       form.style.height = (h/2 + "px");
       form.style["margin-top"] = ("-" + h/4 + "px");
       form.style["margin-left"] = ("-" + w/6 + "px");
-
-      //form.style["background-color"] = "black !important";
       form.style.opacity = "1 !important";
     } else {
       //Make changes to hide the form pop-up

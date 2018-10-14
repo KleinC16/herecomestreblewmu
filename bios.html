@@ -17,6 +17,9 @@
         text-decoration: none;
         color: pink;
       }
+      h2 {
+        padding-top: 0.5em;
+      }
       #links {
         padding-bottom: 10px;
         padding-top: 10px;
@@ -24,57 +27,43 @@
         bottom: 0;
         height:60px;
       }
-       /* Three columns side by side */
       .column {
         float: left;
         width: 25%;
         margin-bottom: 16px;
         padding: 0 8px;
       }
-
       .col {
         min-width: 10em;
-      /*width: 20% !important;*/
       }
-
-      /* Display the columns below each other instead of side by side on small screens */
       @media screen and (max-width: 650px) {
         .column {
           width: 100%;
           display: block;
         }
       }
-
-      /* Add some shadows to create a card effect */
       .new_card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         transition: all .2s ease-in-out;
         background-color: white;
         min-width:
       }
-
       .new_card:hover {
         transform: scale(1.1);
       }
-
-      /* Some left and right padding inside the container */
       .container {
         padding: 0 16px;
       }
-
-      /* Clear floats */
       .container::after, .row::after {
         content: "";
         clear: both;
         display: table;
       }
-
       .title {
         color: grey;
         font-weight: 450;
         margin: 0;
       }
-
       .button {
         border: none;
         outline: 0;
@@ -86,11 +75,9 @@
         cursor: pointer;
         width: 100%;
       }
-
       .button:hover {
         background-color: #f5cdab;
       }
-
       #cards {
         margin: 0px 50px 0px 50px;
       }
@@ -136,7 +123,7 @@
     <section id="cards">
       <h2><em>Executive Board</em></h2>
       <div class="row d-flex align-items-stretch">
-        <div class="column col d-flex align-items-stretch">
+        <div class="column col-md d-flex align-items-stretch">
           <div class="new_card">
             <img src="images/img (94).jpg" alt="Christopher Frego" style="width:100%;">
             <div class="container">
@@ -153,7 +140,7 @@
           </div>
         </div>
 
-        <div class="column col d-flex align-items-stretch">
+        <div class="column col-md d-flex align-items-stretch">
           <div class="new_card">
             <img src="images/img (58).jpg" alt="Maddie Pierce" style="width:100%;">
             <div class="container">
@@ -171,7 +158,7 @@
           </div>
         </div>
 
-        <div class="column col d-flex align-items-stretch">
+        <div class="column col-md d-flex align-items-stretch">
           <div class="new_card">
             <img src="images/img (11).jpg" alt="Briana Klug" style="width:100%;">
             <div class="container">
@@ -188,7 +175,7 @@
           </div>
         </div>
 
-        <div class="column col d-flex align-items-stretch">
+        <div class="column col-md d-flex align-items-stretch">
           <div class="new_card">
             <img src="images/img (79).jpg" alt="Anna Sitar" style="width:100%;">
             <div class="container">
@@ -206,7 +193,7 @@
           </div>
         </div>
 
-        <div class="column col d-flex align-items-stretch">
+        <div class="column col-md d-flex align-items-stretch">
           <div class="new_card">
             <img src="images/img (68).jpg" alt="Emma Dunlop" style="width:100%;">
             <div class="container">
@@ -363,9 +350,11 @@
             <img src="images/img (115).jpg" alt="Cat Vaught" style="width:100%;">
             <div class="container">
               <h2>Cat Vaught</h2>
-              <p class="title"></p>
+              <p class="title">Soprano</p>
+              <p class="title">Aviation Engineering</p>
               <p>
-                Missing Bio.
+                I am from Traverse City. I love to sing and I'm excited to be
+                part of Here Comes Treble!
               </p>
             </div>
           </div>

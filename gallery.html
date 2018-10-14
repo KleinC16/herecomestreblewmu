@@ -4,14 +4,12 @@
     <title>Here Comes Treble</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-
-            <!-- jQuery -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
-
-            <!-- nanogallery2 -->
-            <link  href="https://unpkg.com/nanogallery2@2.2.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
-            <script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.2.0/dist/jquery.nanogallery2.min.js"></script>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <!-- nanogallery2 -->
+    <link  href="https://unpkg.com/nanogallery2@2.2.0/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+    <script  type="text/javascript" src="https://unpkg.com/nanogallery2@2.2.0/dist/jquery.nanogallery2.min.js"></script>
   </head>
    <style>
       .fa {
@@ -43,7 +41,6 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -67,29 +64,37 @@
         </ul>
       </div>
     </nav>
+
     <div class="jumbotron">
       <h1 class="display-3" style="text-align: center; font-size: 40pt;">Gallery</h1>
     </div>
 
-      <div class="row">
-        <div class="col-md-6 centered">
-          <iframe width="560" height="315" align="middle" src="https://www.youtube.com/embed/XIHlGnCJY-Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <iframe width="560" height="315" align="middle" src="https://www.youtube.com/embed/XIHlGnCJY-Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
+    </div>
+
+    <div class="row">
+      <script type="text/javascript" language="javascript" src="js/loadImages.js">
+        loadImages();
+      </script>
+    </div>
+
 
       <!-- ### position of the gallery ### -->
-      <div id="nanogallery2">gallery_made_with_nanogallery2</div>
+      <!--div id="nanogallery2">gallery_made_with_nanogallery2</div-->
 
-      <script>
+      <!--script>
         jQuery(document).ready(function () {
 
         jQuery("#nanogallery2").nanogallery2( {
-          <!-- ### gallery settings ### -->
-          thumbnailHeight:  75,
-          thumbnailWidth:   75,
+          <! ### gallery settings ###>
+          thumbnailHeight:  70,
+          thumbnailWidth:   70,
           itemsBaseURL: 'images/',
 
-                        <!-- ### gallery content ### -->
+                        <! ### gallery content ###>
                         items: [
                           { src: 'img (1).jpg', srct: '/thumbnails/img (1)_tn.jpg', title: ''},
                           { src: 'img (2).jpg', srct: '/thumbnails/img (2)_tn.jpg', title: ''},
@@ -320,7 +325,7 @@
                           ]
                       });
                   });
-              </script>
+              </script-->
 
     <section style="overflow: hidden;">
     </section>
@@ -331,6 +336,9 @@
       <a href="https://www.instagram.com/herecomestreblewmu/" class="fa fa-instagram" target="_blank"></a>
       <a href="https://www.youtube.com/channel/UCHcgfp8DzRe_5oj10eps0cg/about" class="fa fa-youtube" target="_blank"></a>
     </section>
+
+    <script type="text/javascript" language="javascript" src="js/loadImages.js"></script>
+    <script type="text/javascript" language="javascript" src="js/imageSlideShow.js"></script>
 
     <footer>
     </footer>

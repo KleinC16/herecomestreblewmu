@@ -6,124 +6,124 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <script type="text/javascript" language="javascript" src="js/loadImages.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+       .fa {
+         color: pink;
+         font-size: 25px;
+         text-decoration: none;
+         padding-left: 30px;
+         margin-top: -50px;
+       }
+       .fa:hover {
+         text-decoration: none;
+         color: pink;
+       }
+       #links {
+         padding-bottom: 10px;
+         padding-top: 10px;
+         text-align: center;
+         bottom: 0;
+         height:60px;
+       }
+       img.hover-shadow {
+         transition: 0.1s;
+       }
+       .hover-shadow:hover {
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         transform: scale(1.05);
+       }
+       .modal {
+         display: none;
+         position: fixed;
+         z-index: 1;
+         padding-top: 100px;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         background-color: black;
+       }
+       .modal-content {
+         position: relative;
+         background-color: #fefefe;
+         margin: auto;
+         padding: 0;
+         width: 90%;
+         max-width: 1200px;
+       }
+       .close {
+         color: white;
+         position: absolute;
+         top: 10px;
+         right: 25px;
+         font-size: 35px;
+         font-weight: bold;
+       }
+       .close:hover,
+       .close:focus {
+         color: #999;
+         text-decoration: none;
+         cursor: pointer;
+       }
+       .mySlides {
+         display: none;
+       }
+       .cursor {
+         cursor: pointer;
+       }
+       .prev,
+       .next {
+         cursor: pointer;
+         position: absolute;
+         top: 50%;
+         width: auto;
+         padding: 16px;
+         margin-top: -50px;
+         color: white;
+         font-weight: bold;
+         font-size: 20px;
+         transition: 0.6s ease;
+         border-radius: 0 3px 3px 0;
+         user-select: none;
+         background-color: rgba(0, 0, 0, 0.3);
+         -webkit-user-select: none;
+       }
+       .next {
+         right: 0;
+         border-radius: 3px 0 0 3px;
+       }
+       .prev:hover,
+       .next:hover {
+         background-color: rgba(0, 0, 0, 0.8);
+       }
+       .numbertext {
+         color: #f2f2f2;
+         font-size: 12px;
+         padding: 8px 12px;
+         position: absolute;
+         top: 0;
+       }
+       img {
+         margin-bottom: -4px;
+       }
+       .caption-container {
+         text-align: center;
+         background-color: black;
+         padding: 2px 16px;
+         color: white;
+       }
+       .demo {
+         opacity: 0.6;
+       }
+       .active,
+       .demo:hover {
+         opacity: 1;
+       }
+     </style>
   </head>
-   <style>
-      .fa {
-        color: pink;
-        font-size: 25px;
-        text-decoration: none;
-        padding-left: 30px;
-        margin-top: -50px;
-      }
-      .fa:hover {
-        text-decoration: none;
-        color: pink;
-      }
-      #links {
-        padding-bottom: 10px;
-        padding-top: 10px;
-        text-align: center;
-        bottom: 0;
-        height:60px;
-      }
-      img.hover-shadow {
-        transition: 0.1s;
-      }
-      .hover-shadow:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        transform: scale(1.05);
-      }
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: black;
-      }
-      .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: auto;
-        padding: 0;
-        width: 90%;
-        max-width: 1200px;
-      }
-      .close {
-        color: white;
-        position: absolute;
-        top: 10px;
-        right: 25px;
-        font-size: 35px;
-        font-weight: bold;
-      }
-      .close:hover,
-      .close:focus {
-        color: #999;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .mySlides {
-        display: none;
-      }
-      .cursor {
-        cursor: pointer;
-      }
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -50px;
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-        background-color: rgba(0, 0, 0, 0.3);
-        -webkit-user-select: none;
-      }
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-      .numbertext {
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-        position: absolute;
-        top: 0;
-      }
-      img {
-        margin-bottom: -4px;
-      }
-      .caption-container {
-        text-align: center;
-        background-color: black;
-        padding: 2px 16px;
-        color: white;
-      }
-      .demo {
-        opacity: 0.6;
-      }
-      .active,
-      .demo:hover {
-        opacity: 1;
-      }
-    </style>
 
   <body>
     <header>

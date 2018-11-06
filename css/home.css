@@ -15,10 +15,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 2px 2px black;
-    color: #afafaf;
+    text-shadow: 1px 1px black;
+    color: #dbdbdb;
+}
+
+.hero-text h1 {
+    color: #dbdbdb;
+    text-shadow: 1px 1px black;
 }
 /******* End image header *******/
+
+/* .header {
+  text-shadow: 1px 1px black;
+  color: #dbdbdb;
+} */
 
 /******* About us section *******/
 .form-popup {

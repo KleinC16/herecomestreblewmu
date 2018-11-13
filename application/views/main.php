@@ -2,6 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 
+<?php
+  session_start();
+  $username = "root";
+  $password = "";
+  try {
+      $db = new PDO("mysql:host=localhost;dbname=herecomestreblewmu", $username, $password);
+  }
+  catch (PDOException $e) {
+      echo "Connection failed: " . $e->getMessage();
+  }
+
+?>
+
 <html>
   <head>
     <title>Here Comes Treble</title>
@@ -10,6 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
   </head>
 
   <body>
@@ -18,15 +32,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-------- Start Navbar -------->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark behind" id="behind">
-      <a class="navbar-brand" href="index.html">Here Comes Treble</a>
+      <a class="navbar-brand" href="#home">Here Comes Treble</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="catalog.html">Events</a>
@@ -48,14 +62,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </nav>
     <!-------- End Navbar -------->
 
-    <div class="header">
+    <a name="home" ></a>
+    <div class="header" style="padding-top:48px;">
       <div class="hero-image">
         <img src="assets/images/img (194).jpg" style="visibility: hidden; width: 50%;"/>
         <div class="hero-text">
 
-          <a name="home"><h1>Here Comes Treble</h1></a><br>
+          <h1>Here Comes Treble</h1><br>
           <p class="lead" style="margin-right: 1em; margin-left: 1em;"> <!-- margin-right: 100px; margin-left: 100px; -->
-              is an a capella group at Western Michigan University
+              an a capella group at Western Michigan University
               focused on growth and friendship. With members that share a strong passion for music,
               we are dedicated to bringing our audience the most moving experience possible.
               We sing for the love of singing, and showcase all of our members through compromise and flexibility.
@@ -127,6 +142,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--div class="jumbotron"-->
       <a name="members"><h1 class="display-3" style="text-align: center; font-size: 40pt;">Meet the Members</h1></a>
     <!--/div-->
+
+    <?php
+        $biosSql = "SELECT username, position, classification, major, description FROM bios";
+        $query = $db -> prepare($biosSql);
+        $query -> execute();
+
+        if ($query -> rowCount() != 0) {
+            while ($row = $query -> fetch()) {
+                echo '<h1>' . $row['username'] . '</h1>';
+                echo '<h1>' . $row['position'] . '</h1>';
+                echo '<h1>' . $row['classification'] . '</h1>';
+                echo '<h1>' . $row['major'] . '</h1>';
+                echo '<p>' . $row['description'] . '</h1>';
+            }
+        }
+     ?>
 
     <section id="cards">
       <h2><em>Executive Board</em></h2>
@@ -459,8 +490,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </section>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/displayContactForm.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/displayContactForm.js"></script> -->
 
   </body>
 

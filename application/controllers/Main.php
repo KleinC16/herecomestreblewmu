@@ -22,4 +22,8 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('main');
 	}
+
+	public function loadBios() {
+		echo '<h1>test</h1>';
+	}
 }

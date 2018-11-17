@@ -50,9 +50,15 @@
           box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;

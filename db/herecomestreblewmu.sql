@@ -28,6 +28,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `bios`
 --
 
+DROP TABLE IF EXISTS `bios`;
+
 CREATE TABLE `bios` (
   `biosid` int(11) NOT NULL,
   `username` varchar(32) NOT NULL,
@@ -49,6 +51,8 @@ INSERT INTO `bios` (`biosid`, `username`, `position`, `classification`, `major`,
 --
 -- Table structure for table `users`
 --
+
+DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,

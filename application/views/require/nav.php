@@ -6,10 +6,10 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="main">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#members">Members</a>
+                <a class="nav-link" href="main#members">Members</a>
             </li>
         </ul>
     </div>
@@ -18,7 +18,8 @@
             <a class="nav-link" href="#">login</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">sign up</a>
+            <a class="nav-link" href="signup">sign up</a>
         </li>
     </ul>
 </nav>
+<h1 style="padding-bottom:48px;"></h1>

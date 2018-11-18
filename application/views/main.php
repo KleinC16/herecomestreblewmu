@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $heroq = $this->db->query("SELECT website_name, header_image, home_description
                                             FROM configurations");
             $hero = $heroq->row();
-            echo '<div class="header" style="padding-top:48px;">';
+            echo '<div class="header">';
             echo '<div class="hero-image">';
             echo '<div class="row h-75">';
             echo '<img src="assets/images/' . $hero->header_image . '.jpg" style="visibility: hidden; width: 100%;"/>';

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Main extends CI_Controller {
+class Signup extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,7 +23,7 @@ class Main extends CI_Controller {
 		$this->load->database('default');
 		$this->load->view('require/head.php');
 		$this->load->view('require/nav.php');
-		$this->load->view('signup');
+		$this->load->view('signup.php');
 	}
 
 }

@@ -8,6 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $heroq = $this->db->query("SELECT website_name, header_image, home_description
                                             FROM configurations");
             $hero = $heroq->row();
+            echo '<section>';
             echo '<div class="header">';
             echo '<div class="hero-image">';
             echo '<div class="row h-75">';
@@ -20,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo '</div>';
             echo '</div>';
             echo '</div>';
+            echo '</section>'
         ?>
 
         <br><br>
@@ -29,7 +31,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php
             function display_executive($member, $count) {
                 $fullname = $member->firstname . " " . $member->lastname;
-                echo '<div class="col-md d-flex">';
+                if ($count != 5) {
+                    echo '<div class="col-md-3 d-flex align-items-stretch">';
+                } else {
+                    echo '<div class="col-md d-flex align-items-stretch">'; // try adjusting rows based on screen width... figure out what looks at each pixel size
+                }
+
                 echo '<div class="new_card">';
                 echo '<img src="assets/images/users/' . strtolower($member->firstname) . '.' . strtolower($member->lastname) . '.jpg" alt="' . $fullname . '" style="width:100%;">';
                 echo '<div class="container">';
@@ -43,18 +50,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
 
             function display_member($member, $count) {
-                // echo '<div class="row">';
-                // echo '<div class="column d-flex align-items-stretch">';
-                // echo '<div class="new_card">';
-                // echo '<img src="assets/images/users/img (132).jpg" alt="Niang Siam" style="width:100%;">';
-                // echo '<div class="container">';
-                // echo '<h2>Niang Siam</h2>';
-                // echo '<p class="title">Alto</p>';
-                // echo '<p class="title">Elementary Education</p>';
-                // echo '<p>' .  . '</p>';
-                // echo '</div>';
-                // echo '</div>';
-                // echo '</div>';
+                $fullname = $member->firstname . " " . $member->lastname;
+                echo '<div class="col-md-3 d-flex align-items-stretch justify-content-md-center">';
+                echo '<div class="new_card">';
+                echo '<img src="assets/images/users/' . strtolower($member->firstname) . '.' . strtolower($member->lastname) . '.jpg" alt="' . $fullname . '" style="width:100%;">';
+                echo '<div class="container">';
+                echo '<h2>' . $fullname . '</h2>';
+                echo '<p class="title">' . $member->classification . '</p>';
+                echo '<p>' . $member->description . '</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
             }
 
             $executiveq = $this->db->query("SELECT firstname, lastname, position, classification, major, description
@@ -66,20 +72,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             echo '<section id="cards">';
             echo '<h2><em>Executive Board</em></h2>';
-
-            if ($numExecutives == 5) {
-                echo '<div class="row justify-content-center">';
-
-            } else {
-                // put four in a row instead.
-            }
-
+            echo '<div class="row justify-content-md-center">';
             $i = 0;
             foreach($executiveq->result() as $row) {
                 if ($row->position != NULL) {
                     display_executive($row, $numExecutives);
                 }
                 $i++;
+                if ($numExecutives > 5) {
+                    if ($i % 4 == 0) {
+                        echo '</div>';
+                        echo '<br>';
+                        echo '<div class="row justify-content-md-center">';
+                    }
+                }
             }
             echo '</div>';
 
@@ -92,20 +98,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             //sort($memberq);
 
             echo '<h2><em>Members</em></h2>';
-            echo '<div class="row">';
+            echo '<div class="row justify-content-md-center">';
             $i = 0;
             foreach($memberq->result() as $row) {
                 if ($row->position == NULL) {
-                    display_executive($row, $numMembers);
+                    display_member($row, $numMembers);
                 }
                 $i++;
-                if ($i % 5 == 0) {
+                if ($i % 4 == 0) {
                     echo '</div>';
-                    echo '<div class="row">';
+                    echo '<br>';
+                    echo '<div class="row justify-content-md-center">';
                 }
             }
             echo '</div>';
-            echo '</section>';
+            echo '</section>'; // end cards section
          ?>
 
             <!-- <section id="cards">

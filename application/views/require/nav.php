@@ -6,28 +6,21 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="main#home">Home</a>
+                <a class="nav-link" href="/<?php echo base_url();?>main">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="main#members">Members</a>
+                <a class="nav-link" href="/<?php echo base_url();?>main#members">Members</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="gallery">Gallery</a>
+                <a class="nav-link" href="/<?php echo base_url();?>gallery">Gallery</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="">login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="signup">sign up</a>
-            </li> -->
-
         </ul>
         <ul class="navbar-nav float-sm-right">
             <li class="nav-item">
                 <a class="nav-link" href="">login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="signup">sign up</a>
+                <a class="nav-link" href="/<?php echo base_url();?>signup">sign up</a>
             </li>
         </ul>
     </div>

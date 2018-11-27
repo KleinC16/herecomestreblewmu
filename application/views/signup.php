@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div style="margin:50px 50px 0px 50px;">
 <form _lpchecked="1">
 	<h3>Create your account</h3>
@@ -32,3 +33,10 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>
+=======
+<html>
+    <body>
+        <h1>Sign up page!</h1>
+    </body>
+</html>
+>>>>>>> f6b234e622d780440d3499a2083d1c526048a7d8

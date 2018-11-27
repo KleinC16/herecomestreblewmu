@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Main extends CI_Controller {
+class Gallery extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,12 +18,18 @@ class Main extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+
+
 	public function index()
 	{
-		$this->load->database('default');
-		// $this->load->view('require/head');
-		// $this->load->view('require/nav');
-		$this->load->view('main');
+        $this->load->database('default');
+		$this->load->view('gallery/default');
 	}
+
+    public function upload()
+    {
+        $this->load->view('gallery/default');
+    }
 
 }

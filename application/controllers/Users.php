@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Main extends CI_Controller {
+class Users extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -23,7 +23,7 @@ class Main extends CI_Controller {
 		$this->load->database('default');
 		// $this->load->view('require/head');
 		// $this->load->view('require/nav');
-		$this->load->view('main');
+		$this->load->view('users');
 	}
 
 }

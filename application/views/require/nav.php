@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="main">Home</a>
+                <a class="nav-link" href="main#home">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="main#members">Members</a>

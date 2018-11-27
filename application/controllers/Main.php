@@ -21,8 +21,8 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$this->load->database('default');
-		$this->load->view('require/head.php');
-		$this->load->view('require/nav.php');
+		// $this->load->view('require/head');
+		// $this->load->view('require/nav');
 		$this->load->view('main');
 	}
 

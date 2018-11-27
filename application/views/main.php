@@ -2,8 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html>
+    <?php $this->load->view('require/head'); ?>
     <body>
         <a name="home" ></a>
+        <?php $this->load->view('require/nav'); ?>
+
         <?php
             $heroq = $this->db->query("SELECT website_name, header_image, home_description
                                             FROM configurations");
@@ -11,17 +14,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo '<section>';
             echo '<div class="header">';
             echo '<div class="hero-image">';
-            echo '<div class="row h-75">';
-            echo '<img src="assets/images/' . $hero->header_image . '.jpg" style="visibility: hidden; width: 100%;"/>';
-            echo '<div class="hero-text">';
+            echo '<div class="row">';
+            echo '<div class="col">';
+            echo '<img src="assets/images/' . $hero->header_image . '.jpg" class="mw-60" style="visibility: hidden;"/>';
+            echo '<div class="hero-text" id="fitin">';
+            echo '<div>';
             echo '<h1>' . $hero->website_name . '</h1><br>';
             echo '<p class="lead" style="margin-right: 1em; margin-left: 1em;">' . $hero->home_description . '</p>';
-            echo '<hr class="my-4" style="margin-left: 100px; margin-right: 100px;">';
+            // echo '<hr class="my-4" style="margin-left: 100px; margin-right: 100px;">';
             echo '</div>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
-            echo '</section>'
+            echo '</div>';
+            echo '</div>';
+            echo '</section>';
         ?>
 
         <br><br>
@@ -110,8 +117,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- - - - End Bios - - - -->
 
         <?php $this->load->view('require/footer.php'); ?>
-
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" language="javascript" src="js/displayContactForm.js"></script> -->
     </body>
 </html>

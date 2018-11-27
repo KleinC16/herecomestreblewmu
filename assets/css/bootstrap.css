@@ -7905,6 +7905,10 @@ button.bg-dark:focus {
   max-width: 100% !important;
 }
 
+.mw-60 {
+  max-width: 60% !important;
+}
+
 .mw-20 {
   max-width: 20% !important;
 }

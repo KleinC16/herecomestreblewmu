@@ -12,8 +12,16 @@ class Gallery extends CI_Controller {
 
     public function upload()
     {
+		$this->load->database('default');
 		$this->load->helper('url');
         $this->load->view('gallery/upload');
     }
+
+	public function view()
+	{
+		$this->load->database('default');
+		$this->load->helper('url');
+		$this->load->view('gallery/view');
+	}
 
 }

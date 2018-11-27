@@ -7,7 +7,7 @@ class Users extends CI_Controller {
 	{
 		$this->load->database('default');
 		$this->load->helper('url');
-		$this->load->view('users');
+		$this->load->view('admin/users/view');
 	}
 
 }

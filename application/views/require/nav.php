@@ -11,21 +11,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="main#members">Members</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery">Gallery</a>
+            </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="">login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="signup">sign up</a>
             </li> -->
+
         </ul>
-        <!-- <ul class="navbar-nav float-sm-right">
+        <ul class="navbar-nav float-sm-right">
             <li class="nav-item">
                 <a class="nav-link" href="">login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="signup">sign up</a>
             </li>
-        </ul> -->
+        </ul>
     </div>
 </nav>
 <h1 style="padding-bottom:48px;"></h1>

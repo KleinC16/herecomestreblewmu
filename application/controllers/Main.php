@@ -5,8 +5,6 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->database('default');
-		$this->load->helper('url');
 		$this->load->view('main');
 	}
 

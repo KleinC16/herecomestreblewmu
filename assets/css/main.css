@@ -163,3 +163,21 @@ h2 {
   margin: 0px 50px 0px 50px;
 }
 /******* End bios section ******/
+
+/******* Form authentication syling *******/
+#firstname, #lastname, #username, #password {
+    background-image:  url('../images/icons/auth.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 16px 18px;
+    background-position: 98% 50%;
+}
+
+#email {
+    background-image: url('../images/icons/contact.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 16px 18px;
+    background-position: 98% 50%;
+}
+/***** END form authentication sytling ****/

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php $this->load->view('require/head'); ?>
     <body>
         <?php $this->load->view('require/nav'); ?>
-
+        <a name="home"></a>
         <?php
             $heroq = $this->db->query("SELECT website_name, header_image, home_description
                                             FROM configurations");
@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo '<div class="row">';
             echo '<div class="col">';
             echo '<img src="assets/images/' . $hero->header_image . '.jpg" class="mw-60" style="visibility: hidden;"/>';
-            echo '<div class="hero-text" id="fitin">';
+            echo '<div class="hero-text">';
             echo '<div>';
             echo '<h1>' . $hero->website_name . '</h1><br>';
             echo '<p class="lead" style="margin-right: 1em; margin-left: 1em;">' . $hero->home_description . '</p>';
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $i = 0;
             foreach($executiveq->result() as $row) {
                 if ($row->position != NULL) {
-                    write_members($row, $numExecutives);
+                    write_members($row);
                 }
                 $i++;
                 if ($numExecutives > 5) {
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $i = 0;
             foreach($memberq->result() as $row) {
                 if ($row->position == NULL) {
-                    write_members($row, $numMembers);
+                    write_members($row);
                 }
                 $i++;
                 if ($i % 4 == 0) {

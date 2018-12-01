@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2018 at 07:05 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Dec 01, 2018 at 01:43 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `bios`
 --
 DROP TABLE IF EXISTS `bios`;
+
 CREATE TABLE `bios` (
   `biosid` int(11) NOT NULL,
   `username` varchar(32) NOT NULL,
@@ -58,14 +59,17 @@ INSERT INTO `bios` (`biosid`, `username`, `position`, `classification`, `major`,
 (14, 'kitty.clark', NULL, 'Soprano', 'Vocal Performance', 'I am a Freshman at WMU. I\'ve been performing since I can remember and I\'m so happy to be a part of HCT! When I\'m not signing, I love to read, do community service, and watch movies. I could not imagine a better group of people to perform with and I\'m so thankful to have met these amazing people!'),
 (15, 'kailyn.riebe', NULL, 'Soprano', 'Secondary Education', 'I am from Berkley, Michigan. I am a Sophomore at Western. I have done theatre since I was eight years old, dance since I was three ears old, and singing a good majority of my life. I love the performing arts in general, it is a passion of mine. I am really excited to be a part of Here Comes Treble, I feel like I am already a part of a family. They even tolerate my bad dance moves! I am so lucky to have the opportunity to make music alongside all of these amazingly talented people!'),
 (16, 'meggie.anderson', NULL, 'Soprano', 'Education, WMU Grad', 'I\'m a WMU graduate. I\'ve been a musical theatre kid since way back. While other kids in gym class were strategizing how to win the sports games, I was in the outfield choreographing dances and picking dandelions. In my freetime I like to read books about magic and mysteries. I love our a capella group because I think it\'s so important to have a good group of genuine, no-drama friends, and it\'s even cooler when we all have a love of singing in common!'),
-(17, 'haley.schnoor', NULL, 'Alto', 'Special Education', 'I\'m a super super Senior after chaning my major, but I\'ve finally found my niche. I love music, dramatic TV shows, reading, Taco Bell, and snuggling my cat. I am thrilled to be a part of HCT this year and I already love it!');
+(17, 'haley.schnoor', NULL, 'Alto', 'Special Education', 'I\'m a super super Senior after chaning my major, but I\'ve finally found my niche. I love music, dramatic TV shows, reading, Taco Bell, and snuggling my cat. I am thrilled to be a part of HCT this year and I already love it!'),
+(18, 'noah.jahn', NULL, 'Tenor', 'Computer Science', 'I am in the computer science major and I don\'t sing in this group.');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `configurations`
 --
+
 DROP TABLE IF EXISTS `configurations`;
+
 CREATE TABLE `configurations` (
   `website_name` varchar(32) NOT NULL,
   `header_image` varchar(128) NOT NULL,
@@ -82,9 +86,30 @@ INSERT INTO `configurations` (`website_name`, `header_image`, `home_description`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallery`
+--
+
+DROP TABLE IF EXISTS `gallery`;
+
+CREATE TABLE `gallery` (
+  `gid` int(11) NOT NULL,
+  `post_title` varchar(64) NOT NULL,
+  `post_date` date NOT NULL,
+  `post_author` varchar(64) NOT NULL,
+  `post_description` varchar(512) NOT NULL,
+  `post_tags` varchar(64) NOT NULL,
+  `post_likes` int(11) NOT NULL DEFAULT '0',
+  `post_dislikes` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
+
 DROP TABLE IF EXISTS `users`;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
@@ -130,6 +155,13 @@ ALTER TABLE `bios`
   ADD UNIQUE KEY `biosid_2` (`biosid`);
 
 --
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`gid`),
+  ADD UNIQUE KEY `gid` (`gid`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -144,13 +176,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bios`
 --
 ALTER TABLE `bios`
-  MODIFY `biosid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `biosid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

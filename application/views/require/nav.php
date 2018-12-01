@@ -16,7 +16,7 @@
             </li>
         </ul>
         <?php
-            if ((isset($_SESSION['loggedin']))) {
+            if (!(isset($_SESSION['loggedin']))) {
                 echo '<ul class="navbar-nav float-sm-right">';
                 echo '<li class="nav-item">';
                 echo '<a class="nav-link" href="#" id="trigger">login</a>';

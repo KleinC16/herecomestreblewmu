@@ -31,6 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<hr>
 					</div>
 					<div class="Instagram-card-footer">
+						<div class="likes-dislikes">
+							<a class="fa fa-arrow-up" href="#"></i></a>
+							<a class="fa fa-arrow-down" href="#"></i></a>
+						</div>
 						<a class="footer-action-icons"href="#"><i class="fa fa-heart-o"></i></a>
 						<input class="comments-input" type="text" placeholder="Add a comment..."/>
 						<a class="footer-action-icons"href="#"><i class="fa fa-ellipsis-h"></i></a>

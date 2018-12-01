@@ -12,11 +12,12 @@ class Signup extends CI_Controller {
 	{
 		// form validation library https://www.codeigniter.com/userguide3/libraries/form_validation.html
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('firstname', 'First name', 'required'); // return false if firstname contains anything other than alpha characters.
-		$this->form_validation->set_rules('lastname', 'Last name', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('username', 'Username', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('firstname', 'first name', 'required|alpha|max_length[32]'); // return false if firstname contains anything other than alpha characters.
+		$this->form_validation->set_rules('lastname', 'last name', 'required|alpha|max_length[32]');
+		$this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[64]|is_unique[users.email]', array('is_unique'=>'This %s already exists.'));
+		$this->form_validation->set_rules('username', 'username', 'required|max_length[32]|is_unique[users.username]');
+		$this->form_validation->set_rules('password', 'password', 'required|max_length[64]');
+		$this->form_validation->set_rules('passwordconf', 'password confirmation', 'required|matches[password]');
 
 		if ($this->form_validation->run() == TRUE) { // return true if the rules applied successfully
 			// true
@@ -30,7 +31,6 @@ class Signup extends CI_Controller {
 			);
 
 			$this->signup_model->insert_data($data);
-
 			redirect(base_url() . 'signup/inserted');
 
 		} else {

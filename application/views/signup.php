@@ -63,7 +63,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     }
                 }
             ?>
-
             </div>
             <div class="col-md-4"></div>
         </div>

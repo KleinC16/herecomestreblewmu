@@ -7925,6 +7925,10 @@ button.bg-dark:focus {
   max-height: 100% !important;
 }
 
+.mh-50 {
+  max-height: 50% !important;
+}
+
 .m-0 {
   margin: 0 !important;
 }

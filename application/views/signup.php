@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 if (isset($_SESSION['loggedin'])) {
                     echo '<h3>Hey, Silly! You\'re already logged in, how did you get here?<h3>';
                 } else {
-                    echo '<form method="post" action="/' . base_url() . 'Signup/form_validation">';
+                    echo '<form method="post" action="' . base_url() . 'Signup/form_validation">';
                     if ($this->uri->segment(2) == "inserted") {
                         echo '<p>You have successfully signed up!</p>';
                     }

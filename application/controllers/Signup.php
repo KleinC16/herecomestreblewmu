@@ -5,19 +5,11 @@ class Signup extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->library('form_validation');
-		// $this->load->helper(array('form', 'url'));
 		$this->load->view('signup');
 	}
 
 	public function form_validation()
 	{
-		// $this->load->helper(array('form', 'url'));
-
-		// $username = $this->input->post("firstname");
-
-		// echo '<h1>' . $username . '</h1>';
-
 		// form validation library https://www.codeigniter.com/userguide3/libraries/form_validation.html
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('firstname', 'First name', 'required'); // return false if firstname contains anything other than alpha characters.
@@ -39,7 +31,7 @@ class Signup extends CI_Controller {
 
 			$this->signup_model->insert_data($data);
 
-			redirect(base_url() . 'inserted');
+			redirect(base_url() . 'signup/inserted');
 
 		} else {
 			// false

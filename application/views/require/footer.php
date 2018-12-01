@@ -1,4 +1,4 @@
-<footer class="behind" id="behind">
+<footer class="footer behind" id="behind">
     <section id="links">
         <a href="https://www.facebook.com/herecomestreblewmu/" class="fa fa-facebook" target="_blank"></a>
         <a href="https://twitter.com/treblewmu/" class="fa fa-twitter" target="_blank"></a>

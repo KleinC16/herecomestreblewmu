@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 return strcmp($o1->firstname, $o2->$firstname);
             }
 
-            $executiveq = $this->db->query("SELECT firstname, lastname, position, classification, major, description
+            $executiveq = $this->db->query("SELECT firstname, lastname, position, classification, major, description, complete
                                                 FROM bios
                                                 JOIN users
                                                 WHERE bios.username = users.username
@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo '<div class="row justify-content-md-center">';
             $i = 0;
             foreach($executiveq->result() as $row) {
-                if ($row->position != NULL) {
+                if ($row->position != NULL && $row->complete == 1) {
                     write_members($row);
                 }
                 $i++;
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
             echo '</div>';
 
-            $memberq = $this->db->query("SELECT firstname, lastname, position, classification, major, description
+            $memberq = $this->db->query("SELECT firstname, lastname, position, classification, major, description, complete
                                                 FROM bios
                                                 JOIN users
                                                 WHERE bios.username = users.username
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             echo '<div class="row justify-content-md-center">';
             $i = 0;
             foreach($memberq->result() as $row) {
-                if ($row->position == NULL) {
+                if ($row->position == NULL && $row->complete == 1) {
                     write_members($row);
                 }
                 $i++;

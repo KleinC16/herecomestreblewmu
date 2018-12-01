@@ -14,12 +14,21 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url();?>gallery">Gallery</a>
             </li>
+            <?php
+                if($this->session->userdata('username') == TRUE) {
+                    echo '<ul class="navbar-nav">';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="' . base_url() . 'gallery/upload">Upload</a>';
+                    echo '</li>';
+                    echo '</ul>';
+                }
+            ?>
         </ul>
         <?php
-            if($this->session->userdata('username') == FALSE){
+            if($this->session->userdata('username') == FALSE) {
                 echo '<ul class="navbar-nav float-sm-right">';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="' . base_url() . 'login" id="trigger">login</a>';
+                echo '<a class="nav-link" href="' . base_url() . 'auth" id="trigger">login</a>';
                 echo '</li>';
                 echo '<li class="nav-item">';
                 echo '<a class="nav-link" href=' . base_url() . 'signup>sign up</a>';
@@ -28,7 +37,7 @@
             } else {
                 echo '<ul class="navbar-nav float-sm-right">';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="' . base_url() . 'login/logout">log out</a>';
+                echo '<a class="nav-link" href="' . base_url() . 'auth/logout">log out</a>';
                 echo '</li>';
                 echo '</ul>';
             }

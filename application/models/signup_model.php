@@ -2,10 +2,6 @@
 
 class signup_model extends CI_Model
 {
-    // function test_main()
-    // {
-    //     echo "";
-    // }
 
     function insert_data($data)
     {

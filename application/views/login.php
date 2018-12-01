@@ -9,10 +9,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-4"></div>
             <div class="col-md-4 ml-5 mr-5">
             <?php
-                if (isset($_SESSION['loggedin'])) {
+                if ($this->session->userdata('username') == TRUE) {
                     echo '<h3>Hey, Silly! You\'re already logged in, how did you get here?<h3>';
                 } else {
-                    echo '<form method="post" action="' . base_url() . 'login/auth">';
+                    echo '<form method="post" action="' . base_url() . 'auth/login">';
                     if ($this->uri->segment(2) == "inserted") {
                         echo '<h1>You have successfully signed up!</h1>';
                     } else {

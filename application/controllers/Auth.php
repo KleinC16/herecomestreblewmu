@@ -1,19 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Auth extends CI_Controller {
 
 	public function index()
 	{
 		$this->load->view('login');
 	}
 
-	public function auth()
+	public function login()
 	{
 		// form validation library https://www.codeigniter.com/userguide3/libraries/form_validation.html
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username', 'username', 'required');
-		// $this->form_validation->set_rules('email', 'username/email', 'required');
 		$this->form_validation->set_rules('password', 'password', 'required');
 
 		if ($this->form_validation->run() == TRUE) { // return true if the rules applied successfully
@@ -21,13 +20,13 @@ class Login extends CI_Controller {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 
-			$this->load->model("login_model"); // where the query is run.
-			if ($this->login_model->can_login($username, $password)) {
+			$this->load->model("auth_model"); // where the query is run.
+			if ($this->auth_model->can_login($username, $password)) {
 				$session_data = array (
 					'username'	=> $username
 				);
 				$this->session->set_userdata($session_data);
-				redirect(base_url() . 'gallery');
+				redirect(base_url() . 'auth/enter');
 
 			} else {
 				$this->session->set_flashdata('error', 'Invalid username and password');
@@ -44,8 +43,12 @@ class Login extends CI_Controller {
 	public function enter()
 	{
 		if ($this->session->userdata('username') != '') {
-			echo '<h2?Welcome - ' . $this->session->userdata('username') . '</h2>';
-			echo '<label><a href"' . base_url() . 'main/logout">Logout</a></label>';
+			$this->load->model("auth_model");
+			if ($this->auth_model->is_bios_complete($this->session->userdata('username'))) {
+				redirect(base_url() . 'main');
+			} else {
+				redirect(base_url() . 'profile/add');
+			}
 		} else {
 			redirect(base_url() . 'main/login');
 		}

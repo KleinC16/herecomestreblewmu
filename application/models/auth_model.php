@@ -1,11 +1,7 @@
 <?php
 
-class login_model extends CI_Model
+class auth_model extends CI_Model
 {
-    // function test_main()
-    // {
-    //     echo "";
-    // }
 
     function can_login($username, $password)
     {
@@ -23,4 +19,20 @@ class login_model extends CI_Model
             return false;
         }
     }
-} ?>
+
+    function is_bios_complete($username) {
+        $this->db->where('username', $username);
+        $this->db->where('complete', 1); // so they have already completed their bios..
+        $query = $this->db->get('bios');
+
+        if ($query->num_rows() > 0) {
+            // we found a user
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+}
+
+?>

@@ -6,6 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<a name="home" ></a>
 	<?php $this->load->view('require/nav'); ?>
+	<?php $this->load->view('require/searchNav'); ?>
+
 	<div class="gallery-default-container">
 
 		<div class="card-deck">
@@ -18,6 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="Instagram-card-image">
 					<img src= "<?php echo base_url();?>assets/images/bongo-cat.svg" height=600px/>
 				</div>
+				
 				<div class="Instagram-card-content">
 					<p class="Likes">2,568,990 likes</p>
 					<p><a class="Instagram-card-content-user">

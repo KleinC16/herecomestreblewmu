@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     if ($this->uri->segment(2) == "inserted") {
                         echo '<h1>You have successfully signed up!</h1>';
                     } else {
-                        echo '<h3>Login in:</h3>';
+                        echo '<h3>Login:</h3>';
                         echo '<fieldset>';
                         echo '<div class="form-group">';
                         echo '<label for="username">Username</label>';

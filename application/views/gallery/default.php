@@ -2,16 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-    <?php $this->load->view('require/head'); ?>
-    <body>
-        <a name="home" ></a>
-        <?php $this->load->view('require/nav'); ?>
-        <h1>Gallery Home</h1>
-        <?php $this->load->view('require/footer.php'); ?>
-    </body>
-</html>
-=======
 <?php $this->load->view('require/head'); ?>
 <body>
 	<a name="home" ></a>
@@ -21,21 +11,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<div class="card-deck">
 			<div class="card">
-				<img class="card-img-top" src="/<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
+				<img class="card-img-top" src="<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					<p class="card-text"><small class="text-muted">1 min ago</small></p>
 				</div>
 			</div>
 			<div class="card">
-				<img class="card-img-top" src="/<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
+				<img class="card-img-top" src="<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 					<p class="card-text"><small class="text-muted">3 mins ago</small></p>
 				</div>
 			</div>
 			<div class="card">
-				<img class="card-img-top" src="/<?php echo base_url();?>assets/images/bongo-cat.jpg"
+				<img class="card-img-top" src="<?php echo base_url();?>assets/images/bongo-cat.jpg"
 				alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -46,21 +36,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<div class="card-deck">
 			<div class="card">
-				<img class="card-img-top" src="/<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
+				<img class="card-img-top" src="<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					<p class="card-text"><small class="text-muted">9 mins ago</small></p>
 				</div>
 			</div>
 			<div class="card">
-				<img class="card-img-top" src="/<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
+				<img class="card-img-top" src="<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 					<p class="card-text"><small class="text-muted">15 mins ago</small></p>
 				</div>
 			</div>
 			<div class="card">
-				<img class="card-img-top" src="/<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
+				<img class="card-img-top" src="<?php echo base_url();?>assets/images/bongo-cat.jpg" alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
 					<p class="card-text"><small class="text-muted">30 mins ago</small></p>
@@ -87,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<p class="comments"> see 12 more comments </p>
 					<br><a class="user-comment" href="#">username2</a> Hello</br>
 					<hr>
-				</div>  
+				</div>
 				<div class="Instagram-card-footer">
 					<a class="footer-action-icons"href="#"><i class="fa fa-heart-o"></i></a>
 					<input class="comments-input" type="text" placeholder="Add a comment..."/>
@@ -99,4 +89,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php $this->load->view('require/footer.php'); ?>
 	</body>
 	</html>
->>>>>>> 398793b69f05663eb033409a94e75d6546e7f9c1

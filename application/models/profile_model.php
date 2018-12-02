@@ -39,6 +39,10 @@ class profile_model extends CI_Model
         }
     }
 
+    function get_user_posts($username) {
+
+    }
+
 }
 
 ?>

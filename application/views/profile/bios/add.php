@@ -14,7 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             var classification = document.getElementById("classification").value;
             var major = document.getElementById("major").value;
             var description = document.getElementById("description").value;
-
             var html = ("<div class=\"row\">" + "<div class=\"col-7\">" + "<div class=\"new_card\">" + "<img src=\"<?php echo base_url() ?>assets/images/index.png\" alt=\"\" style=\"width:100%;\">"
                             + "<div class=\"container\">" + "<h2>Firstname Lastname</h2>" + "<p class=\"title\">" + position + "</p>"
                             + "<p class=\"title\">" + classification + "</p>" + "<p class=\"title\">" + major + "</p>" + "<p>" + description + "</p>"

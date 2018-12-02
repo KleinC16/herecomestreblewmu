@@ -39,7 +39,7 @@ class Profile extends CI_Controller {
 					$data = $this->upload->data();
 				}
 				$this->load->model("profile_model");
-				$image_path = ("./assets/images/users/" . $_FILES['userfile']['name']);
+				$image_path = ("assets/images/users/" . $_FILES['userfile']['name']);
 				$data = array(
 					"image"=>$image_path,
 					"position"=>$this->input->post("postion"),

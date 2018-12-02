@@ -21,6 +21,11 @@
                     echo '<a class="nav-link" href="' . base_url() . 'gallery/upload">Upload</a>';
                     echo '</li>';
                     echo '</ul>';
+                    echo '<ul class="navbar-nav">';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="' . base_url() . 'profile">Profile</a>';
+                    echo '</li>';
+                    echo '</ul>';
                 }
             ?>
         </ul>

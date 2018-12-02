@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-md-4 ml-5 mr-5">
             <?php
                 if($this->session->userdata('username') == TRUE) {
-                    echo '<h3>Hey, Silly! You\'re already logged in, how did you get here?<h3>';
+                    $this->load->view('errors/already_logged');
                 } else {
                     echo '<form method="post" action="' . base_url() . 'Signup/form_validation">';
                     if ($this->uri->segment(2) == "inserted") {

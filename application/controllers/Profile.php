@@ -8,7 +8,8 @@ class Profile extends CI_Controller {
 		$this->load->view('profile/user');
 	}
 
-    public function add() {
+    public function add()
+	{
         $this->load->view('profile/bios/add');
     }
 
@@ -16,31 +17,51 @@ class Profile extends CI_Controller {
 	{
 		// form validation library https://www.codeigniter.com/userguide3/libraries/form_validation.html
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('firstname', 'first name', 'required|alpha|max_length[32]'); // return false if firstname contains anything other than alpha characters.
-		$this->form_validation->set_rules('lastname', 'last name', 'required|alpha|max_length[32]');
-		$this->form_validation->set_rules('email', 'email', 'required|valid_email|max_length[64]|is_unique[users.email]', array('is_unique'=>'This %s already exists.'));
-		$this->form_validation->set_rules('username', 'username', 'required|max_length[32]|is_unique[users.username]');
-		$this->form_validation->set_rules('password', 'password', 'required|max_length[64]');
-		$this->form_validation->set_rules('passwordconf', 'password confirmation', 'required|matches[password]');
+		if (empty($_FILES['userfile']['name'])) {
+			$this->form_validation->set_rules('userfile', 'image', 'required|max_length[256]');
+		}
+		$this->form_validation->set_rules('position', 'position', 'alpha|max_length[16]');
+		$this->form_validation->set_rules('classification', 'part', 'required|max_length[42]');
+		$this->form_validation->set_rules('major', 'major', 'required|max_length[64]');
+		$this->form_validation->set_rules('description', 'description', 'required|max_length[576]');
 
 		if ($this->form_validation->run() == TRUE) { // return true if the rules applied successfully
 			// true
-			$this->load->model("signup_model");
-			$data = array(
-				"firstname"=>$this->input->post("firstname"),
-				"lastname"=>$this->input->post("lastname"),
-				"email"=>$this->input->post("email"),
-				"username"=>$this->input->post("username"),
-				"password"=>$this->input->post("password")
-			);
+			$username = $this->session->userdata('username');
+			if(isset($_FILES['userfile']['name'])) {
+				// $config['file_name'] = ($this->session->userdata('username') + "");
+				// $config['overwrite'] = true;
+				$config['upload_path'] = "./assets/images/users/";
+				$config['allowed_types'] = "jpg|jpeg|png";
 
-			$this->signup_model->insert_data($data);
-			redirect(base_url() . 'signup/inserted');
+				$this->load->library('upload', $config);
+				if ($this->upload->do_upload()) {
+					$data = $this->upload->data();
+				}
+				$this->load->model("profile_model");
+				$image_path = ("./assets/images/users/" . $_FILES['userfile']['name']);
+				$data = array(
+					"image"=>$image_path,
+					"position"=>$this->input->post("postion"),
+					"classification"=>$this->input->post("classification"),
+					"major"=>$this->input->post("major"),
+					"description"=>$this->input->post("description")
+				);
 
+				$this->profile_model->insert_bio($data, $username);
+				redirect(base_url() . 'profile/added');
+			} else {
+				echo 'FAILURE';
+			}
 		} else {
 			// false
-			$this->index();
+			$this->add();
 		}
+	}
+
+	public function added()
+	{
+		$this->load->view('profile/bios/add');
 	}
 
 }

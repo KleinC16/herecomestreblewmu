@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php $this->load->view('require/nav'); ?>
         <?php
         if ($this->session->userdata('username') == FALSE) {
-            echo '<h1>You don\'t have access to view this page, please sign up or login!</h1>';
+            $this->load->view('errors/no_access');
         } else {
             $username = $this->session->userdata('username');
 

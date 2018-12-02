@@ -9,7 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php $this->load->view('require/searchNav'); ?>
 
 	<div class="gallery-default-container">
-
 		<div class="card-deck">
 			<div class="Instagram-card">
 				<div class="Instagram-card-header">
@@ -20,7 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="Instagram-card-image">
 					<img src= "<?php echo base_url();?>assets/images/bongo-cat.svg" height=600px/>
 				</div>
-				
 				<div class="Instagram-card-content">
 					<p class="Likes">2,568,990 likes</p>
 					<p><a class="Instagram-card-content-user">
@@ -40,7 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a class="footer-action-icons"href="#"><i class="fa fa-ellipsis-h"></i></a>
 					</div>
 				</div>
-
 			</div>
 			<?php $this->load->view('require/footer.php'); ?>
 		</body>

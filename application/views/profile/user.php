@@ -6,6 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <body>
         <a name="home" ></a>
         <?php $this->load->view('require/nav'); ?>
+        <script>
+        function redirect_to_edit() {
+            var url = "<?php echo base_url() ?>profile/add";
+            console.log(url);
+            window.location.replace(url);
+        }
+        </script>
         <?php
         if ($this->session->userdata('username') == FALSE) {
             $this->load->view('errors/no_access');
@@ -40,6 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </div>
+                <br><br>
+                <button onclick="redirect_to_edit()" type="button" class="btn btn-secondary ml-2">Edit</button>
             </div>
             <div class="col-md-4">
                 <div class="row">

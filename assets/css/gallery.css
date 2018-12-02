@@ -34,7 +34,7 @@
 .gallery-default-container {
 	margin: 75px 25px 50px 25px;
 }
-  
+
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
@@ -65,6 +65,9 @@
 	width: 40px;
 	height: 40px;
 	vertical-align: middle;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .Instagram-card-time{
@@ -142,7 +145,7 @@ hr {
 
 .description {
     margin-top: 8px;
-   font-size: 20px;   
+   font-size: 20px;
 }
 
 .panel {

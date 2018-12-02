@@ -36,14 +36,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                     <div class="col-7">
                         <div class="new_card">
-                            <img src="<?php echo base_url() ?>assets/images/index.png" alt="" style="width:100%;">
-                            <div class="container">
-                                <h2>Firstname Lastname</h2>
-                                <p class="title">position</p>
-                                <p class="title">classification</p>
-                                <p class="title">major</p>
-                                <p>description</p>
-                            </div>
+                            <?php
+                                $this->db->where('bios.username', $username);
+                                $this->db->join('users', 'bios.username = users.username');
+                                $query = $this->db->get('bios');
+
+                                foreach ($query->result() as $row) {
+                                    echo '<img src="' . base_url() . $row->image . '" alt="" style="width:100%;">';
+                                    echo '<div class="container">';
+                                    echo '<h2>'. $row->firstname . ' ' . $row->lastname . '</h2>';
+                                    if ($row->position !== NULL) {
+                                        echo '<p class="title">' . $row->position . '</p>';
+                                    }
+                                    echo '<p class="title">' . $row->classification . '</p>';
+                                    echo '<p class="title">' . $row->major . '</p>';
+                                    echo '<p>' . $row->description . '</p>';
+                                    echo '</div>';
+                                }
+                             ?>
+
                         </div>
                     </div>
                 </div>

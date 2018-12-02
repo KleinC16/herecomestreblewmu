@@ -36,16 +36,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <a name="members"><h1 class="text-center">Meet the Members</h1></a>
         <?php
             function write_members($member) {
-                $fullname = $member->firstname . " " . $member->lastname;
                 echo '<div class="col-lg-3 d-flex align-items-stretch justify-content-md-center">';
                 echo '<div class="new_card">';
-                echo '<img src="assets/images/users/' . strtolower($member->firstname) . '.' . strtolower($member->lastname) . '.jpg" alt="' . $fullname . '" style="width:100%;">';
+                echo '<img src="' . base_url() . $member->image . '" alt="" style="width:100%;">';
                 echo '<div class="container">';
-                echo '<h2>' . $fullname . '</h2>';
-                if ($member->position != NULL) {
+                echo '<h2>'. $member->firstname . ' ' . $member->lastname . '</h2>';
+                if ($member->position !== NULL) {
                     echo '<p class="title">' . $member->position . '</p>';
                 }
                 echo '<p class="title">' . $member->classification . '</p>';
+                echo '<p class="title">' . $member->major . '</p>';
                 echo '<p>' . $member->description . '</p>';
                 echo '</div>';
                 echo '</div>';
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 return strcmp($o1->firstname, $o2->$firstname);
             }
 
-            $executiveq = $this->db->query("SELECT firstname, lastname, position, classification, major, description, complete
+            $executiveq = $this->db->query("SELECT firstname, lastname, position, classification, major, description, complete, image
                                                 FROM bios
                                                 JOIN users
                                                 WHERE bios.username = users.username
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
             echo '</div>';
 
-            $memberq = $this->db->query("SELECT firstname, lastname, position, classification, major, description, complete
+            $memberq = $this->db->query("SELECT firstname, lastname, position, classification, major, description, complete, image
                                                 FROM bios
                                                 JOIN users
                                                 WHERE bios.username = users.username

@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<input type="text" name="tags"><br><br>
 			<input type="submit" value="Upload" name="submit">
 		</form>
-		
+
 	</div>
 	<?php $this->load->view('require/footer.php'); ?>
 </body>

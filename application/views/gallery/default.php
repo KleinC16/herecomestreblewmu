@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				//echo '<div class="Instagram-card-time"> 1 hour ago </div>';
 				echo '</div>';
 				echo '<div class="Instagram-card-image">';
-				echo '<img src="' . base_url() . $row->post_image . '" height=600px/>';
+				echo '<img src="' . base_url() . $row->post_image . '"/>';
 				echo '</div>';
 				echo '<div class="Instagram-card-content">';
 				echo '<p class="Likes">' . $row->post_likes . ' likes</p>';

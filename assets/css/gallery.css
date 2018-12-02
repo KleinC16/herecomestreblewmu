@@ -5,6 +5,12 @@
   text-align: center;
   width: 100%;
   position: fixed;
+  z-index: 2;
+}
+
+img {
+  max-width: 100%;
+  max-height: auto;
 }
 
 .search-box {

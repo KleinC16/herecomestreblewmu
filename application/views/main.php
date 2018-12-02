@@ -115,6 +115,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          ?>
         <!-- - - - End Bios - - - -->
 
+        <h1 class="text-center">Popular Images from our Gallery</h1>
+        <div class="row">
+            <div class="col-md-3"></div>
+        <?php
+            $query = $this->db->query("SELECT post_image, post_likes
+                                            FROM gallery
+                                            ORDER BY post_likes DESC
+                                            LIMIT 3");
+
+            foreach ($query->result() as $row) {
+                echo '<div class="col-md-2"><img src="' . $row->post_image . '" height="200px" width="200px"></div>';
+            }
+         ?>
+         <div class="col-md-3"></div>
+        </div>
+
         <?php $this->load->view('require/footer.php'); ?>
     </body>
 </html>

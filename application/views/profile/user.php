@@ -96,8 +96,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          ?>
                     </table>
                 </div>
-
-
             </div>
             <div class="col-md-2"></div>
         </div>

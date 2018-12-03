@@ -1,6 +1,6 @@
 # CS 3500_100 - Final Project: Image Sharing Site
-#Noah Jahn and Chandler Klein
-# Website: A capella group Here Comes Treble
+Noah Jahn and Chandler Klein
+Website: A capella group Here Comes Treble
 
 For this project, we continued development of the website that was made
 for the midterm. The site is being hosted through Google Cloud. Technologies

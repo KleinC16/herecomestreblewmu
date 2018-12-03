@@ -164,6 +164,10 @@ h2 {
 }
 /******* End bios section ******/
 
+.popular-images {
+  background-color: black;
+}
+
 /******* Form authentication syling *******/
 #firstname, #lastname, #username, #password {
     background-image:  url('../images/icons/auth.png');

@@ -28,8 +28,10 @@ class Profile extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) { // return true if the rules applied successfully
 			// true
 			$username = $this->session->userdata('username');
+			//$uid = $this->db->query('SELECT `biosid` FROM `bios` WHERE `username` = \'' . $username . '\'')->row()->id;
+			//$newname = $uid;
 			if(isset($_FILES['userfile']['name'])) {
-				// $config['file_name'] = ($this->session->userdata('username') + "");
+				//$config['file_name'] = $newname;
 				// $config['overwrite'] = true;
 				$config['upload_path'] = "./assets/images/users/";
 				$config['allowed_types'] = "jpg|jpeg|png";
@@ -39,8 +41,12 @@ class Profile extends CI_Controller {
 					$data = $this->upload->data();
 				}
 				$this->load->model("profile_model");
+				$filename = $_FILES['userfile']['name'];
+				//$ext = end((explode(".", $filename)));
+				//$newname = ($newname . '.' . $ext);
 				$image_path = ("assets/images/users/" . $_FILES['userfile']['name']);
 				$data = array(
+					"username"=>$username,
 					"image"=>$image_path,
 					"position"=>$this->input->post("postion"),
 					"classification"=>$this->input->post("classification"),

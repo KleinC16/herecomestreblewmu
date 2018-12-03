@@ -114,6 +114,10 @@ class Gallery extends CI_Controller {
 
 	}
 
+	public function search() {
+		redirect(base_url() . 'gallery/?tag=' . $this->input->post("tag"));
+	}
+
 	public function view()
 	{
 		$this->load->view('gallery/view');

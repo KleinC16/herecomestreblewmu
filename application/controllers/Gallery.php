@@ -14,6 +14,7 @@ class Gallery extends CI_Controller {
     }
 
 	public function upload_form() {
+		ini_set('memory_limit', '-1');
 		$this->load->library('form_validation');
 		if (empty($_FILES['userfile']['name'])) {
 			$this->form_validation->set_rules('userfile', 'image', 'required|max_length[256]|is_unique[gallery.post_image]');
@@ -42,13 +43,14 @@ class Gallery extends CI_Controller {
 				$ext = end((explode(".", $filename)));
 				$newname = ($newname . '.' . $ext);
 				$image_path = ("assets/images/gallery/" . $newname); // . $_FILES['userfile']['name']
+				$date = new DateTime("now", new DateTimeZone('America/New_York') );
 				$data = array(
 					"post_image"=>$image_path,
 					"post_title"=>$this->input->post("post_title"),
 					"post_author"=>$username,
 					"post_description"=>$this->input->post("post_description"),
 					"post_tags"=>$this->input->post("post_tags"),
-					"post_date"=>date("Y-m-d h:i:s")
+					"post_date"=>$date->format('Y-m-d h:i:s')
 				);
 
 				$this->gallery_model->insert_to_gallery($data);

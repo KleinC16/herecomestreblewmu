@@ -70,7 +70,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo '<div id="preview"></div>';
                 echo '<div class="col-md-2"></div>';
                 echo '</div>';
-                echo '<script>';
             }
          ?>
 

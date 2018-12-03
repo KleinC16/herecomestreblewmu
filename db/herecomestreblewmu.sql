@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2018 at 01:01 AM
+-- Generation Time: Dec 03, 2018 at 05:07 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -97,24 +97,25 @@ DROP TABLE IF EXISTS `gallery`;
 CREATE TABLE `gallery` (
   `gid` int(11) NOT NULL,
   `post_title` varchar(64) NOT NULL,
-  `post_date` date NOT NULL,
+  `post_date` datetime NOT NULL,
   `post_author` varchar(64) NOT NULL,
   `post_description` varchar(512) NOT NULL,
   `post_tags` varchar(64) NOT NULL,
   `post_likes` int(11) NOT NULL DEFAULT '0',
   `post_dislikes` int(11) NOT NULL DEFAULT '0',
-  `post_image` varchar(256) NOT NULL
+  `post_image` varchar(256) NOT NULL,
+  `post_views` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `gallery`
 --
 
-INSERT INTO `gallery` (`gid`, `post_title`, `post_date`, `post_author`, `post_description`, `post_tags`, `post_likes`, `post_dislikes`, `post_image`) VALUES
-(1, 'My First Post', '2018-12-02', 'noah.jahn', 'This is my very first post and my very first post description. I hope you like this image as much as I do.', 'test,tag,cool,awesome', 10000, 99999999, 'assets/images/gallery/bongo-cat.jpg'),
-(2, 'My second post', '2018-12-02', 'noah.jahn', 'this is my second post!', 'second,post', 444, 5555, 'assets/images/gallery/699169.jpg'),
-(3, 'Juicy', '2018-12-01', 'noah.jahn', 'This is my third juicy post.', 'juicy', 88888, 0, 'assets/images/gallery/Fun.jpg'),
-(4, 'Yet another post', '2018-11-30', 'noah.jahn', 'This is another post that I did', 'another,poost', 1111, 838383, 'assets/images/gallery/Spiderman_png_by_captainjackharkness-d5cbru1.png');
+INSERT INTO `gallery` (`gid`, `post_title`, `post_date`, `post_author`, `post_description`, `post_tags`, `post_likes`, `post_dislikes`, `post_image`, `post_views`) VALUES
+(1, 'My First Post', '2018-12-02 00:00:00', 'noah.jahn', 'This is my very first post and my very first post description. I hope you like this image as much as I do.', 'test,tag,cool,awesome', 10000, 99999999, 'assets/images/gallery/bongo-cat.jpg', 5),
+(2, 'My second post', '2018-12-02 00:00:00', 'noah.jahn', 'this is my second post!', 'second,post', 448, 5557, 'assets/images/gallery/699169.jpg', 71),
+(3, 'Juicy', '2018-12-01 00:00:00', 'noah.jahn', 'This is my third juicy post.', 'juicy', 88888, 0, 'assets/images/gallery/Fun.jpg', 0),
+(4, 'Yet another post', '2018-11-30 00:00:00', 'noah.jahn', 'This is another post that I did', 'another,poost', 1111, 838383, 'assets/images/gallery/Spiderman_png_by_captainjackharkness-d5cbru1.png', 0);
 
 -- --------------------------------------------------------
 
@@ -130,6 +131,16 @@ CREATE TABLE `gallery_comments` (
   `gid` int(11) NOT NULL,
   `username` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gallery_comments`
+--
+
+INSERT INTO `gallery_comments` (`cid`, `comment`, `gid`, `username`) VALUES
+(1, 'This is a comment on this photo.', 2, 'noah.jahn'),
+(2, 'I am also commenting on this post.', 2, 'noah.jahn'),
+(3, 'last comment.', 2, 'noah.jahn'),
+(4, 'new comment', 1, 'noah.jahn');
 
 -- --------------------------------------------------------
 
@@ -192,7 +203,9 @@ CREATE TABLE `user_favorites` (
 
 INSERT INTO `user_favorites` (`fid`, `uid`, `gid`) VALUES
 (1, 21, 3),
-(2, 1, 3);
+(2, 1, 3),
+(3, 21, 2),
+(4, 21, 1);
 
 --
 -- Indexes for dumped tables
@@ -247,13 +260,13 @@ ALTER TABLE `bios`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `gallery_comments`
 --
 ALTER TABLE `gallery_comments`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -265,7 +278,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_favorites`
 --
 ALTER TABLE `user_favorites`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

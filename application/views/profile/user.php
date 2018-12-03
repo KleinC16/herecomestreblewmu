@@ -100,8 +100,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </tr>
                         <?php
                             $username = $this->session->userdata('username');
-                            $this->db->where('post_author', $username);
-                            $query = $this->db->get('gallery');
+                            $this->db->where('username', $username);
+                            $this->db->join('user_favorites', 'user_favorites.uid = users.id');
+                            $this->db->join('gallery', 'gallery.gid = user_favorites.gid');
+                            $query = $this->db->get('users');
 
                             $i = 0;
                             foreach ($query->result() as $row)

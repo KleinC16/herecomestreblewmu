@@ -1,8 +1,6 @@
-###################
-CS 3500_100 - Final Project: Image Sharing Site
-Noah Jahn and Chandler Klein
-Website: A capella group Here Comes Treble
-###################
+# CS 3500_100 - Final Project: Image Sharing Site
+#Noah Jahn and Chandler Klein
+# Website: A capella group Here Comes Treble
 
 For this project, we continued development of the website that was made
 for the midterm. The site is being hosted through Google Cloud. Technologies
@@ -12,17 +10,13 @@ framework was implemented in order to expedite the coding process and
 add an extra layer of features that wouldn't normally be achievable in the 
 same amount of time by coding from scratch.
 
-*******************
-Finding Code
-*******************
+## Finding Code
 
 Because we used the CodeIgniter framework, it might be a bit more
 difficult to find code that needs to be examined. The important 
 subfolders of "herecomestreblewmu" will be explained next. 
 
-*******************
-/application
-*******************
+### /application
 
 This is the folder that most of our own code is in. It contains a config
 folder with files that are mostly used to load the database and create
@@ -33,25 +27,19 @@ contains files designed to insert, update, and retrieve data for our pages.
 Lastly, there is a views folder which is simply our web pages that are 
 loaded by the controllers. 
 
-*******************
-/assets
-*******************
+### /assets
 
 Here is the folder that contains mostly CSS and images. The Bootstrap
 framework was used, and there is a CSS file for each important web page.
 In /assets/images, there are gallery, icon, and user profile images. There
 is a single JavaScript file used to smooth scroll through the landing page.
 
-*******************
-/db
-*******************
+### /db
 
 This is where we keep the SQL file that holds the database used 
 and all of its tables.
 
-*******************
-Summary
-******************* 
+## Summary
 
 All of the previous folders where were the most important code can be found.
 The folders not mentioned mostly contain drivers, libraries, and other information

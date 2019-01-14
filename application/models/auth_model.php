@@ -1,6 +1,6 @@
 <?php
 
-class auth_model extends CI_Model
+class Auth_model extends CI_Model
 {
 
     function can_login($username, $password)

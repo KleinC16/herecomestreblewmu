@@ -1,6 +1,6 @@
 <?php
 
-class signup_model extends CI_Model
+class Signup_model extends CI_Model
 {
 
     function insert_data($data)

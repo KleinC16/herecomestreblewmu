@@ -1,6 +1,6 @@
 <?php
 
-class gallery_model extends CI_Model
+class Gallery_model extends CI_Model
 {
 
     function insert_to_gallery($data)

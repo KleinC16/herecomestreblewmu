@@ -11,16 +11,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url();?>main#members">Members</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url();?>gallery">Gallery</a>
-            </li>
+            </li> -->
             <?php
                 if($this->session->userdata('username') == TRUE) {
-                    echo '<ul class="navbar-nav">';
-                    echo '<li class="nav-item">';
-                    echo '<a class="nav-link" href="' . base_url() . 'gallery/upload">Upload</a>';
-                    echo '</li>';
-                    echo '</ul>';
+                    // echo '<ul class="navbar-nav">';
+                    // echo '<li class="nav-item">';
+                    // echo '<a class="nav-link" href="' . base_url() . 'gallery/upload">Upload</a>';
+                    // echo '</li>';
+                    // echo '</ul>';
                     echo '<ul class="navbar-nav">';
                     echo '<li class="nav-item">';
                     echo '<a class="nav-link" href="' . base_url() . 'profile">Profile</a>';
@@ -33,11 +33,11 @@
             if($this->session->userdata('username') == FALSE) {
                 echo '<ul class="navbar-nav float-sm-right">';
                 echo '<li class="nav-item">';
-                echo '<a class="nav-link" href="' . base_url() . 'auth" id="trigger">login</a>';
+                echo '<a class="nav-link" href="' . base_url() . 'auth" id="trigger">member login</a>';
                 echo '</li>';
-                echo '<li class="nav-item">';
-                echo '<a class="nav-link" href=' . base_url() . 'signup>sign up</a>';
-                echo '</li>';
+                // echo '<li class="nav-item">';
+                // echo '<a class="nav-link" href=' . base_url() . 'signup>sign up</a>';
+                // echo '</li>';
                 echo '</ul>';
             } else {
                 echo '<ul class="navbar-nav float-sm-right">';

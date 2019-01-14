@@ -14,7 +14,7 @@ class Gallery extends CI_Controller {
     }
 
 	public function upload_form() {
-		ini_set('memory_limit', '-1');
+		//ini_set('memory_limit', '-1');
 		$this->load->library('form_validation');
 		if (empty($_FILES['userfile']['name'])) {
 			$this->form_validation->set_rules('userfile', 'image', 'required|max_length[256]|is_unique[gallery.post_image]');
@@ -25,6 +25,7 @@ class Gallery extends CI_Controller {
 
 		if ($this->form_validation->run() == TRUE) { // return true if the rules applied successfully
 			// true
+			$this->db->save_queries = FALSE;
 			$username = $this->session->userdata('username');
 			$maxid = $this->db->query('SELECT MAX(gid) AS `maxid` FROM `gallery`')->row()->maxid;
 			$newname = $maxid + 1;
@@ -32,30 +33,39 @@ class Gallery extends CI_Controller {
 				$config['file_name'] = ($newname);
 				$config['upload_path'] = "./assets/images/gallery/";
 				$config['allowed_types'] = "jpg|jpeg|png";
+				$config['max_size'] = '10485760';
+				//$config['max_width'] = 
 
 				$this->load->library('upload', $config);
 				if ($this->upload->do_upload()) {
 					$data = $this->upload->data();
-					echo $data;
-				}
-				$this->load->model("gallery_model");
-				$filename = $_FILES['userfile']['name'];
-				$ext = end((explode(".", $filename)));
-				$newname = ($newname . '.' . $ext);
-				$image_path = ("assets/images/gallery/" . $newname); // . $_FILES['userfile']['name']
-				$date = new DateTime("now", new DateTimeZone('America/New_York') );
-				$data = array(
+					//echo $data;
+					$this->load->model("gallery_model");
+					$filename = $_FILES['userfile']['name'];
+					$ext = end((explode(".", $filename)));
+					$newname = ($newname . '.' . $ext);
+					$image_path = ("assets/images/gallery/" . $newname); // . $_FILES['userfile']['name']
+					$date = new DateTime("now", new DateTimeZone('America/New_York') );
+					$data = array(
 					"post_image"=>$image_path,
 					"post_title"=>$this->input->post("post_title"),
 					"post_author"=>$username,
 					"post_description"=>$this->input->post("post_description"),
 					"post_tags"=>$this->input->post("post_tags"),
 					"post_date"=>$date->format('Y-m-d h:i:s')
-				);
+					);
 
-				$this->gallery_model->insert_to_gallery($data);
-				redirect(base_url() . 'gallery');
+					$this->gallery_model->insert_to_gallery($data);
+					$this->db->save_queries = TRUE;
+					redirect(base_url() . 'gallery');
+                                } else {
+                                        $error = array('error' => $this->upload->display_errors());
+					echo $error['error'];
+					$this->db->save_queries = TRUE;
+					//redirect(base_url() . 'profile');
+                                }
 			} else {
+				$this->db->save_queries = TRUE;
 				echo 'FAILURE';
 			}
 		} else {
